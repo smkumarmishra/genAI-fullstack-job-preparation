@@ -11,23 +11,15 @@
 //     credentials:true
 // }))
 
-
 // // require all routes
 // const authRouter = require("./routes/auth.routes")
 // const interviewRouter = require("./routes/interview.routes")
-
-
 
 // // use all routes
 // app.use("/api/auth", authRouter);
 // app.use("/api/interview", interviewRouter);
 
-
-
 // module.exports = app
-
-
-
 
 const express = require("express");
 const cookieParser = require("cookie-parser");
@@ -42,10 +34,10 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://gen-ai-fullstack-job-preparation-9hhsmkqov.vercel.app",
+      "https://gen-ai-fullstack-job-preparation.vercel.app",
     ],
     credentials: true,
-  })
+  }),
 );
 
 // require all routes
