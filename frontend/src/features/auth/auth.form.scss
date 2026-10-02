@@ -1,0 +1,98 @@
+.auth-page {
+  --ink: #202a2a;
+  --muted: #717b78;
+  --line: #dce2dc;
+  --leaf: #2e7b61;
+  --coral: #d77b5e;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.88fr) minmax(480px, 1.12fr);
+  background: #f5f5ef;
+  color: var(--ink);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+
+  .auth-aside {
+    min-height: 100vh;
+    padding: 38px clamp(28px, 5vw, 76px) 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    background-color: #244e43;
+    background-image: radial-gradient(ellipse at 85% 78%, rgba(215, 123, 94, 0.26), transparent 34%), repeating-linear-gradient(135deg, transparent 0 28px, rgba(255, 255, 255, 0.035) 29px 30px);
+    color: #f5f5ef;
+  }
+
+  .brand-mark { color: inherit; text-decoration: none; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.01em; }
+  .brand-mark span { color: #e8a17e; }
+  .aside-copy { position: relative; z-index: 1; max-width: 440px; margin-top: auto; margin-bottom: auto; padding: 90px 0; }
+  .eyebrow, .form-kicker { font-size: 0.69rem; font-weight: 700; letter-spacing: 0.14em; }
+  .eyebrow { color: #dfaa8d; margin-bottom: 22px; }
+  .aside-copy h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 5vw, 5.1rem); line-height: 0.99; font-weight: 400; letter-spacing: -0.035em; }
+  .aside-note { max-width: 330px; margin-top: 24px; color: rgba(245, 245, 239, 0.75); font-size: 0.98rem; line-height: 1.7; }
+  .aside-footer { font-size: 0.78rem; color: rgba(245, 245, 239, 0.8); }
+  .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 9px; border-radius: 50%; background: #e5a17d; vertical-align: 1px; }
+  .aside-index { position: absolute; right: 34px; bottom: 33px; color: rgba(245, 245, 239, 0.55); font-size: 0.68rem; letter-spacing: 0.1em; }
+
+  .auth-content { min-height: 100vh; padding: 54px clamp(28px, 7vw, 110px) 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+  .form-container { width: min(100%, 430px); }
+  .form-kicker { margin-bottom: 13px; color: var(--leaf); }
+  .form-container h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.55rem, 4vw, 3.65rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.03em; }
+  .form-intro { margin-top: 10px; color: var(--muted); font-size: 0.94rem; line-height: 1.6; }
+  form { margin-top: 29px; }
+  .input-group { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 19px; }
+  label { color: #394441; font-size: 0.81rem; font-weight: 650; }
+  input { width: 100%; height: 51px; padding: 0 15px; border: 1px solid var(--line); border-radius: 4px; outline: none; background: rgba(255, 255, 255, 0.67); color: var(--ink); font: inherit; font-size: 0.9rem; transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease; }
+  input::placeholder { color: #9ba39e; }
+  input:focus { border-color: var(--leaf); background: #fff; box-shadow: 0 0 0 3px rgba(46, 123, 97, 0.11); }
+  input[aria-invalid="true"] { border-color: #bf554a; }
+  .password-control { position: relative; }
+  .password-control input { padding-right: 68px; }
+  .visibility-toggle { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); border: 0; background: transparent; color: var(--leaf); font-size: 0.65rem; font-weight: 750; letter-spacing: 0.08em; cursor: pointer; }
+  .field-error { color: #b64d43; font-size: 0.76rem; line-height: 1.4; }
+  .form-alert { margin-top: 20px; padding: 11px 13px; border-left: 3px solid #bf554a; background: #f8e9e5; color: #893c35; font-size: 0.83rem; line-height: 1.5; }
+  .password-strength { display: flex; align-items: center; gap: 10px; margin-top: 2px; }
+  .strength-track { display: flex; flex: 1; gap: 4px; }
+  .strength-track span { display: block; height: 3px; flex: 1; background: #dce2dc; transition: background 180ms ease; }
+  .strength-track .strength-1, .strength-track .strength-2 { background: var(--coral); }
+  .strength-track .strength-3 { background: #b6a24b; }
+  .strength-track .strength-4 { background: var(--leaf); }
+  .strength-label { min-width: 125px; text-align: right; color: var(--muted); font-size: 0.7rem; }
+  .strength-label.is-strong { color: var(--leaf); font-weight: 650; }
+  .helper-text { margin: 0; color: var(--muted); font-size: 0.72rem; line-height: 1.5; }
+  .button { width: 100%; min-height: 53px; margin-top: 27px; padding: 0 18px; display: flex; align-items: center; justify-content: space-between; border: 0; border-radius: 3px; background: var(--leaf); color: #fff; font: inherit; font-size: 0.88rem; font-weight: 650; cursor: pointer; transition: background 160ms ease, transform 160ms ease; }
+  .button:hover:not(:disabled) { background: #24664f; transform: translateY(-1px); }
+  .button:disabled { opacity: 0.68; cursor: wait; }
+  .button span { font-size: 1.12rem; }
+  .auth-switch { margin-top: 23px; color: var(--muted); font-size: 0.82rem; }
+  .auth-switch a { color: var(--leaf); font-weight: 700; text-decoration: none; }
+  .auth-switch a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .auth-switch a span { margin-left: 3px; }
+  .content-footnote { position: absolute; right: 32px; bottom: 24px; color: #9aa19a; font-size: 0.61rem; font-weight: 650; letter-spacing: 0.1em; }
+  .content-footnote span { padding: 0 5px; color: var(--coral); }
+}
+
+.auth-page-register .auth-content { padding-top: 38px; padding-bottom: 44px; }
+.auth-page-register .form-container { max-width: 430px; }
+.auth-page-register .input-group { margin-top: 14px; }
+.auth-page-register form { margin-top: 22px; }
+.auth-page-register .button { margin-top: 21px; }
+
+@media (max-width: 760px) {
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-page .auth-aside { min-height: auto; padding: 24px 26px 26px; }
+  .auth-page .aside-copy { padding: 43px 0 27px; }
+  .auth-page .aside-copy h2 { font-size: clamp(2.45rem, 11vw, 3.5rem); }
+  .auth-page .aside-note, .auth-page .aside-index { display: none; }
+  .auth-page .aside-footer { font-size: 0.73rem; }
+  .auth-page .auth-content { min-height: auto; padding: 42px 26px 74px; }
+  .auth-page .content-footnote { bottom: 20px; right: 26px; left: 26px; text-align: center; }
+}
+
+@media (max-width: 380px) {
+  .auth-page .auth-content { padding-inline: 19px; }
+  .auth-page .auth-aside { padding-inline: 19px; }
+  .auth-page .strength-label { min-width: 112px; font-size: 0.65rem; }
+}
